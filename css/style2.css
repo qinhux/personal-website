@@ -1,0 +1,38 @@
+/* 不知道为什么，这个文件的格式，navigator bar有空隙 */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+header ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: aqua;
+    
+    position: fixed;
+    
+    width: 100%;
+    border: 1px solid red;
+}
+
+header li {
+    /* margin: 0; */
+    /* padding: 0; */
+    float: left;
+}
+
+header a {
+    margin: 0;
+    display: block;
+    /* float: left; */
+    background-color: blanchedalmond;
+    padding: 14px 16px;
+    text-decoration: none;
+    text-align: center;
+}
