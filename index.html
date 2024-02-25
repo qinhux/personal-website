@@ -15,27 +15,39 @@
     <body>
         <header>
             <nav>
-                <ul class="bg-white">
-                <li class="nav_left"><a href="index.html">QinHuxin</a></li>
-                <li class="nav_left"><a href="#self_introduction">Introduction</a></li>
-                <li class="nav_left"><a href="#programming_learning">Programming Learning</a></li>
-                <li class="nav_right" style="float:right"><a href="#">Contact</a></li>
+                <!-- <ul class="bg-white"> -->
+                <ul>
+
+                <section class="page_left">
+                <li><a href="#home">QinHuxin</a></li>
+                <li><a href="#self_introduction">Introduction</a></li>
+                <li><a href="#programming_learning">Programming Learning</a></li>
+                </section>
+
+                <section class="page_right">
+                <li><a href="https://www.linkedin.com/in/qin-huxin-b463352b1/" target="_blank"><img src="img/LinkedIn_Logo.png" alt="LinkedIn"></a></li>
+                <li><a href="https://github.com/qinhux" target="_blank"><img src="img/GitHub_Logo.png" alt="GitHub"></a></li>
+                </section>
+
                 </ul>
             </nav>
         </header>
 
-        <section class="flex flex-row flex-wrap justify-around items-center width-[100%] min-height-[100vh] bg-[rgb(132,129,224)]">
+        <section id="home" class="flex flex-row flex-wrap justify-around items-center width-[100%] min-h-[100vh] bg-[rgb(249,249,249)]">
             <section id="profile">
-                <p class="profile_heading">name:</p>
+                <p class="profile_heading">NAME:</p>
                 <p id="profile_name">QinHuxin</p>
                 <hr>
-                <p class="profile_heading">identity:</p>
+                <p class="profile_heading">Identity:</p>
+
                 <ul id="identity_list">
                     <li>identity1</li>
                     <li>identity2</li>
                     <li>identity3</li>
                     <li>identity4</li>
                 </ul>
+
+                <section id="frofile_circle"></section>
             </section>
 
             <img id="head_sculpture" src="img/head_sculpture.jpeg" alt="head_sculpture">
@@ -43,12 +55,14 @@
         </section>
 
         <section id="self_introduction"> 
+            <section class="page_left">
             <p>Hi! Welcome to my personal space.</p>
             <p>I'm QinHuxin.</p>
             <p>My major is software engineering</p>
             <p>I will graduate from WuHan University
                 of technology in 2025.
             </p>
+            </section>
         </section>
 
         <section id="programming_learning">

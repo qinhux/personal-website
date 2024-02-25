@@ -10,54 +10,71 @@ p {
     margin: 0;  /*不加会产生白边  原因: section中的p标签的margin会超过section的范围 */
 }
 
+.page_left {  /* 网页最左边到左边第一个元素的距离 */
+    margin-left: 8vw;
+}
+
+nav {
+    position: absolute;  /* ? ? 这是什么原理  下面已经用了fixed*/
+    z-index: 2;
+}
+
+header .page_right li { /* nabigator右边，图标之间需要有间隙，防止误点*/
+    margin-left: 8px;
+}
+
+.page_right { /* 网页最右边到右边第一个元素的距离 */
+    margin-right: 8vw;
+}
+
+header .page_left li {
+    float: left;
+}
+
+header .page_right li {
+    float: right;
+}
+
+header .page_right img {
+    height: 25px;
+}
+
+
 header ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: rgb(204, 203, 203);
+    background-color: rgba(255, 255, 255, 0);  /* 第四个参数:background-color透明度 */
+    backdrop-filter: blur(6px); /* backdrop-filter并非所有浏览器都支持 */
+    /* opacity: 0.2; opacity是框内所有元素的透明度*/
 
     position: fixed;
     
     width: 100%;
 }
 
-header li {
-    float: left;
-    border-right: 1px solid #bbb;
-}
 
 @media only screen and (max-width: 600px) {
-    header .nav_left {
+    header .page_left {
         display: none;
     }
 }
 
-header li:last-child {
-    border-right: none;
-}
-
 header li a {
     display: block;
-    height: 50px;   /* 为了书签定位准确 */
+    height: 50px;   /* 为了书签定位准确，指定一个固定的高度 */
     color: rgb(0, 0, 0);
     text-align: center;
     padding: 14px 16px;
     text-decoration: none; 
 }
 
-header li a:hover {
-    background-color: #1c5c6c;
-}
-
-header li a:active {
-    background-color: #2ddede;
-}
 
 
 
 
-#first_view {
+#home {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -65,14 +82,19 @@ header li a:active {
     align-items: center;
 
     width: 100%; 
-    min-height: 100vh; /* 为什么改成100%尺寸变化明显*/
+    /* 原来的版本 */
+    min-height: 100vh; 
 
-    background-color: rgb(132, 129, 224);
+    /* background-color: rgb(249,249,249); */
+    /* 背景颜色从左到右渐变 */
+    background: linear-gradient(to bottom right, rgb(255,255,255),rgb(230, 230, 250));
 }
 
 #profile {
-    background-color: #63c7e3;
-    border: 2px solid #db0404;
+    position: relative; /* ？这里设置position为relative的作用是什么 ？ */
+
+    /* background-color: rgb(249,249,249); */
+    /* border: 2px solid white; */
     border-radius: 20px;
 
     margin-top: 100px; /* 保证在任意尺寸下，nabigator bar不会遮住profile*/
@@ -80,24 +102,67 @@ header li a:active {
     width: 30%;
     min-width: 300px;
 
-    /*height: 70%;   为什么换成%没起作用*/
+    /*为什么换成%没起作用*/
+    /* min-height: 60%;    */
     min-height: 60vh;
+
+    transition: transform 0.3s;
+
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* 水平偏移、垂直偏移、模糊半径和颜色(最后一个参数透明度) */
+    background: linear-gradient(to bottom right, rgb(255,255,255),rgb(230, 230, 250));
+}
+
+#profile:hover {
+    transform: scale(1.02); /* 放大1.02倍 */
+    z-index: 1;
 }
 
 .profile_heading {
     font-size: 20px;
+    margin: 15px;
 }
 
 #profile_name {
     text-align: center;
-    font-size: 30px;
+    font-size: 60px;
+    color: rgb(243,145,61);
 }
 
 #identity_list {
+/* #identity_list li { */
     list-style-type: none;
     text-align: right;
     font-size: 30px;
 }
+
+#identity_list li {
+    /* transition: opacity 0.5s; */
+    transition-duration: 0.5s;
+}
+
+#identity_list li:hover {
+    opacity: 1;
+    font-size: 33px;
+}
+
+/* #profile ul:hover li:not(:hover) { */
+#identity_list li:hover ~ li {
+    opacity: 0.6;
+}
+
+/* 为什么没有像chatgpt一样设置这个圆形的hover，鼠标悬浮到框外面的圆形部分时，依然可以有放大效果 */
+#frofile_circle { 
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+
+    bottom: -30px; /* 这里是什么原理 */
+    left: -30px;
+
+    background-color: rgb(243,145,61);
+}
+
 
 #head_sculpture {
     margin: 100px;
@@ -106,13 +171,19 @@ header li a:active {
 
     height: 50vh;
     min-width: 200px;
+
+    transition: transform 0.5s;
+}
+
+#head_sculpture:hover {
+    transform: translate(5px, 5px);
 }
     
 
 #self_introduction {
     /* border: 2px solid #db0404; */  /*为什么加上这一行后，白边就会消失*/
 
-    scroll-margin-top: 50px; /*怎样保证点击导航栏后，刚好在这个框内，不会显示上一个框的内容*/
+    scroll-margin-top: 50px; /*保证点击导航栏后，刚好在这个框内，不会显示上一个框的内容*/
     min-height: 400px;
     width: 100%;
     background-color: antiquewhite;
