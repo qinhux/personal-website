@@ -1,0 +1,80 @@
+<!--测试tailwind-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta lang="en">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- <link rel="stylesheet" href="css/style.css"> -->
+        <link rel="icon" type="image/x-icon" href="img/favicon.png"> 
+        <title>QinHuXin personal website</title>
+
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+
+    <body class="m-0">
+        <header>
+            <!--text-decoration: none 应该怎么添加-->
+            <nav class="absolute z-[2]">
+                <ul class="list-none m-0 p-0 overflow-hidden bg-[rgba(255,255,255,0)] bd-opacity-0 backdrop-blur-[6px] fixed w-[100%] h-[50px]">
+
+                <section class="ml-[8vw]">
+                <li class="float-left"><a class="block px-[16px] py-[14px] text-center text-[0,0,0]" href="#home">QinHuxin</a></li>
+                <li class="float-left"><a class="block px-[16px] py-[14px] text-center text-[0,0,0]" href="#self_introduction">Introduction</a></li>
+                <li class="float-left"><a class="block px-[16px] py-[14px] text-center text-[0,0,0]" href="#programming_learning">Programming Learning</a></li>
+                </section>
+
+                <section class="mr-[8vw]">
+                <li class="ml-[8px] float-right"><a class="block px-[16px] py-[14px] text-center" href="https://www.linkedin.com/in/qin-huxin-b463352b1/" target="_blank"><img class="h-[25px]" src="img/LinkedIn_Logo.png" alt="LinkedIn"></a></li>
+                <li class="ml-[8px] float-right"><a class="block px-[16px] py-[14px] text-center" href="https://github.com/qinhux" target="_blank"><img class="h-[25px]" src="img/GitHub_Logo.png" alt="GitHub"></a></li>
+                </section>
+
+                </ul>
+            </nav>
+        </header>
+
+        <section class="flex flex-row flex-wrap justify-around items-center w-[100%] min-h-[100vh] bg-[rgb(230,230,250)]">
+            <!--下一行的transition box-shadow 背景渐变怎么处理-->
+            <section id="profile" class="relative rounded-[20px] mt-100px w-[30%] min-w-[300px] min-h-[60vh] bg-[rgb(255,255,255)] hover:scale-[1.02] duration-[0.3s] z-[1]">
+                <p class="text-[20px] m-[15px]">NAME:</p>
+                <p class="text-center text-[60px] text-[rgb(243,145,61)]">QinHuxin</p>
+                <hr>
+                <p class="text-[20px] m-[15px]">Identity:</p>
+
+                <ul id="identity_list" class="list-none text-right text-[30px] mr-[15px] hover:not(:hover:opacity-[0.6])">
+                    <li class="hover:opacity-[1] hover:text-[33px]">identity1</li>
+                    <li class="hover:opacity-[1] hover:text-[33px]">identity2</li>
+                    <li class="hover:opacity-[1] hover:text-[33px]">identity3</li>
+                    <li class="hover:opacity-[1] hover:text-[33px]">identity4</li>
+                </ul>
+
+                <section class="absolute w-[80px] h-[80px] rounded-[50%] bottom-[-30px] left-[-30px] bg-[rgb(243,145,61)]"></section>
+            </section>
+
+            <img id="head_sculpture" class="margin-[100px] rounded-[50%] h-[50vh] min-w-[200px] z-[1] hover:translate-x-[5px] hover:translate-y-[5px] duration-[0.5s]" src="img/head_sculpture.jpeg" alt="head_sculpture">
+
+        </section>
+
+        <section id="self_introduction" class="scroll-mt-[50px] min-h-[400px] w-[100%] bg-[rgb(230,230,250)]"> 
+            <section class="page_left">
+            <p class="text-[3vw]">Hi! Welcome to my personal space.</p>
+            <p class="text-[3vw]">I'm QinHuxin.</p>
+            <p class="text-[3vw]">My major is software engineering</p>
+            <p class="text-[3vw]">I will graduate from WuHan University
+                of technology in 2025.
+            </p>
+            </section>
+        </section>
+
+        <section id="programming_learning" class="scroll-mt-[50px] min-h-[800px] w-[100%] bg-[rgb(230,230,250)]">
+            <p class="m-0">programming_learning...</p>
+            <p>programming_learning...</p>
+
+        </section>
+
+        <footer class="min-h-[100px] text-center bg-[rgb(230,230,250)]">
+            <p class="m-0 text-[20px]">QinHuXin 秦胡鑫</p>
+            <img class="mt-[10px] inline-block h-[25px]" src="img/LinkedIn_Logo.png" alt="LinkedIn">
+            <img class="mt-[10px] inline-block h-[25px]" src="img/GitHub_Logo.png" alt="GitHub">
+        </footer>
+    </body>
+</html>
